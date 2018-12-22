@@ -1,0 +1,58 @@
+#Jorge Nuno
+#
+#september 22, 2016
+#Rock, Paper, Scissors game
+
+#The game must have a loop in order to continue playing
+#as long as playAnotherRound is yes the game will cycle
+playAnotherRound = 'yes'
+#starting big loop (game continuing)
+while playAnotherRound == 'yes':
+    
+#computer/user selecting at random from choices of rock paper scissors
+# import random function to select rock paper scissor at random   
+    import random
+    computer = random.choice (['rock' , 'paper' , 'scissors' ])
+    user = input("Choose from either rock paper or scissors") .lower()
+    playAnotherRound = "yes"
+    #another loop if user doing select an option of rock paper scissor
+    if user not in ('rock','paper','scissors'):
+        print('That is not an option')
+    #otherwise the game continues
+    else:
+        #all possible game outcomes
+        if user == 'paper' and computer == 'rock':
+            print('user wins')
+            print(user, 'beats' ,computer)
+        elif user == 'rock' and computer == 'paper':
+            print('computer wins')
+            print(computer, 'beats' ,user)
+        elif user == 'rock' and computer == 'scissors':
+            print('user wins')
+            print(user, 'beats' ,computer)
+        elif user == 'scissors' and computer == 'rock':
+            print('computer wins')
+            print(computer, 'beats' ,user)
+        elif user == 'scissors' and computer == 'paper':
+            print('user wins')
+            print(user, 'beats' ,computer)
+        elif user == 'paper' and computer == 'scissors':
+            print('computer wins')
+            print(computer, 'beats' ,user)
+        #if user and computer tie
+        else:
+            user == computer 
+            print('it is a tie')
+            print(user, 'ties' ,computer)
+
+       
+    #ask the player to play again   
+    playAnotherRound = input("do you want to keep playing? Yes or No.").lower()
+    #small loop of invalid answer other than yes or no
+    while playAnotherRound not in ('yes','no'):
+        playAnotherRound = input('sorry i dont understand. Would you like to play again?')
+    #ending the big while loop at start by making playAnotherRound to 'no'
+    if playAnotherRound == 'no':
+        print('thank you for playing')
+        exit()
+
